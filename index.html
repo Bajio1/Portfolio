@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hugo Lobato – Portfolio</title>
+  <meta name="description" content="Portfolio de Prénom Nom.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="haut">
+    <nav class="manche" aria-label="Navigation principale">
+
+      <!-- Tête de la guitare, avec les mécaniques -->
+      <div class="tete" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+
+      <a class="case active" href="#accueil" data-note="196.00" aria-current="true">
+        <span class="bois" aria-hidden="true">
+          <span class="cordes"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="repere"></span>
+        </span>
+        <span class="nom">Accueil</span>
+      </a>
+
+      <a class="case" href="#projets" data-note="246.94">
+        <span class="bois" aria-hidden="true">
+          <span class="cordes"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="repere"></span>
+        </span>
+        <span class="nom">Projets</span>
+      </a>
+
+      <a class="case" href="#apropos" data-note="293.66">
+        <span class="bois" aria-hidden="true">
+          <span class="cordes"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="repere"></span>
+        </span>
+        <span class="nom">À propos</span>
+      </a>
+
+      <a class="case" href="#contact" data-note="329.63">
+        <span class="bois" aria-hidden="true">
+          <span class="cordes"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="repere"></span>
+        </span>
+        <span class="nom">Contact</span>
+      </a>
+    </nav>
+
+    <button class="son" type="button" aria-pressed="true">Son activé</button>
+  </header>
+
+  <main>
+    <section id="accueil" class="perso">
+      <h1>Hugo Lobato</h1>
+      <p class="intro">
+       
+      </p>
+    </section>
+    <section id="stack" class="section">
+  <h2>Stack</h2>
+
+  <h3 class="stack-sous-titre">Hard Skills</h3>
+  <ul class="stack-grille">
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/html5/html5-original.svg" alt=""></span>
+      <span class="stack-nom">HTML5</span>
+    </li>
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg" alt=""></span>
+      <span class="stack-nom">CSS</span>
+    </li>
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg" alt=""></span>
+      <span class="stack-nom">JavaScript</span>
+    </li>
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/react/react-original.svg" alt=""></span>
+      <span class="stack-nom">React</span>
+    </li>
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/nodejs/nodejs-original.svg" alt=""></span>
+      <span class="stack-nom">Node.js</span>
+    </li>
+    <li class="stack-carte">
+      <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/typescript/typescript-original.svg" alt=""></span>
+      <span class="stack-nom">TypeScript</span>
+    </li>
+  </ul>
+
+ <h3 class="stack-sous-titre">Soft Skills</h3>
+<ul class="stack-grille">
+  <li class="stack-carte">
+    <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@v15.1.0/assets/svg/1f91d.svg" alt=""></span>
+    <span class="stack-nom">Esprit d’équipe</span>
+  </li>
+  <li class="stack-carte">
+    <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@v15.1.0/assets/svg/1f98e.svg" alt=""></span>
+    <span class="stack-nom">Adaptabilité</span>
+  </li>
+  <li class="stack-carte">
+    <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@v15.1.0/assets/svg/1f50d.svg" alt=""></span>
+    <span class="stack-nom">Curiosité</span>
+  </li>
+  <li class="stack-carte">
+    <span class="stack-mediator"><img src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@v15.1.0/assets/svg/1f3af.svg" alt=""></span>
+    <span class="stack-nom">Rigueur</span>
+  </li>
+</ul>
+</section>
+    <section id="projets" class="section">
+      <h2>Projets</h2>
+
+      <article class="projet">
+        <img src="images/petvet.png" alt="petvet">
+        <div>
+          <h3>Pet&Vet</h3>
+          <p>Application web full stack. <br>Centralise et fluidifie le suivi médical d’un animal
+grâce aux échanges entre propriétaire et vétérinaire.</p>
+          <p class="tags">Front-end : React, TypeScript, Vite, React Router, React Select
+Back-end : Node.js, Express, MySQL2, Joi, CORS, codes HTTP
+Sécurité : hachage Argon2id, JWT, variables d’env. (dotenv)</p>
+          <a href="https://p3-petvet.onrender.com/" class="lien">Voir le projet</a>
+        </div>
+      </article>
+
+      <article class="projet">
+        <img src="images/zelda.png" alt="Zeldalle">
+        <div>
+          <h3>Zeldalle</h3>
+          <p>Application web mobile-first
+Sélection des ingrédients disponibles, affichage des recettes
+associées et localisation des ingrédients sur la carte du jeu.</p>
+          <p class="tags">React, JavaScript, logique applicative, responsive design</p>
+          <a href="https://mickaelbrouttier-max.github.io/Zeldalle/" class="lien">Voir le projet</a>
+        </div>
+      </article>
+
+      <article class="projet">
+        <img src="images/layout.jpg" alt="Capture d'écran du projet 3">
+        <div>
+          <h3>Saltitude Studio</h3>
+          <p>Création de site d’un studio de jeux vidéo indépendant</p>
+          <p class="tags">HTML5, CSS3, JavaScript, formulaire, iframe</p>
+          <a href="https://www.saltitude.fr/" class="lien">Voir le projet</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="apropos" class="section">
+      <h2>À propos</h2>
+      <div class="texte-court">
+        <p> En reconversion vers la cybersécurité après un Bac+2 en
+        développement web, <br> je m’oriente aujourd’hui vers un Bachelor
+        3 à Epitech avec pour objectif d’évoluer dans la protection
+        des systèmes d’information. <br>
+        Mon parcours atypique, entre football américain en tant que
+        sportif de haut niveau et expériences professionnelles à
+        l’international, m’a permis de développer rigueur,
+        adaptabilité et sens des responsabilités. <br>
+        Déjà sensibilisé aux enjeux de cybersécurité lors de workshops
+        techniques, je souhaite désormais approfondir mes
+        compétences au sein d’un contrat d’apprentissage.</p>
+        <p>Et bien sûr, depuis combien de temps tu joues de la guitare, et ce que tu joues.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="doux">Une idée, une question, une opportunité ? Écris-moi.</p>
+      <a href="mailto:hugo.lobato110@gmail.com" class="bouton">hugo.lobato110@gmail.com</a>
+      <ul class="reseaux">
+        <li><a href="https://github.com/Bajio1">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/hugo-lobato-715681387/">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/hugo.lobato1">Instagram</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <p>© 2026 Prénom Nom, fait à la main en HTML, CSS et un peu de JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
