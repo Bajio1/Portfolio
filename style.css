@@ -1,15 +1,15 @@
 :root {
-    --fond: #f1e4c6;          /* épicéa, la table de la guitare */
-    --texte: #2e1c11;
-    --texte-doux: #6b5240;
-    --accent: #a5521a;        /* teinte « sunburst » */
-    --ligne: #d9c6a0;
-    --mediator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='rotate(135 16 16) translate(4 2)'%3E%3Cpath d='M12 27C6 22 1 13 1 8C1 3 6 1 12 1C18 1 23 3 23 8C23 13 18 22 12 27Z' fill='%23a5521a' stroke='%23f6f1e7' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E") 7 7;
-    --palissandre: #4a2c1d;   /* le bois du manche */
-    --frette: #cfcac0;        /* les frettes argentées */
-    --corde: #d4ad69;         /* cordes en bronze */
-    --nacre: #f6f1e7;         /* les repères en nacre */
-    --os: #ece3cf;            /* le sillet */
+  --fond: #f1e4c6;
+  --texte: #2e1c11;
+  --texte-doux: #6b5240;
+  --accent: #a5521a;
+  --ligne: #d9c6a0;
+  --mediator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg transform='rotate(135 16 16) translate(4 2)'%3E%3Cpath d='M12 27C6 22 1 13 1 8C1 3 6 1 12 1C18 1 23 3 23 8C23 13 18 22 12 27Z' fill='%23a5521a' stroke='%23f6f1e7' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E") 7 7;
+  --palissandre: #4a2c1d;
+  --frette: #cfcac0;
+  --corde: #d4ad69;
+  --nacre: #f6f1e7;
+  --os: #ece3cf;
   --titres: "Young Serif", Georgia, serif;
   --texte-police: "Work Sans", system-ui, sans-serif;
   --largeur-max: 960px;
@@ -27,11 +27,16 @@
   }
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html { 
-    scroll-behavior: smooth; scroll-padding-top: 7rem; 
-    cursor: var(--mediator), auto;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+  cursor: var(--mediator), auto;
 }
 
 body {
@@ -42,21 +47,43 @@ body {
   font-size: 1.0625rem;
 }
 
-img { max-width: 100%; display: block; }
-a { color: var(--accent); }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-a:focus-visible, button:focus-visible {
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
-main, .pied {
+main,
+.pied {
   max-width: var(--largeur-max);
   margin: 0 auto;
 }
 
+a,
+button {
+  cursor: var(--mediator), pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--titres);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
 .haut {
   position: sticky;
+  justify-content: center;
   top: 0;
   z-index: 10;
   background: var(--fond);
@@ -69,21 +96,25 @@ main, .pied {
 
 .manche {
   display: flex;
+  position: relative;
   flex: 1;
   max-width: 820px;
   margin: 0 auto;
 }
 
 .tete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 100%;
+  top: 0;
   width: 44px;
   height: 64px;
   background: var(--palissandre);
   clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
   border-radius: 6px 0 0 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   padding: 6px 0;
 }
 
@@ -127,9 +158,17 @@ main, .pied {
   background: var(--corde);
 }
 
-.cordes i:nth-child(4) { height: 1.5px; }
-.cordes i:nth-child(5) { height: 2px; }
-.cordes i:nth-child(6) { height: 2.5px; }
+.cordes i:nth-child(4) {
+  height: 1.5px;
+}
+
+.cordes i:nth-child(5) {
+  height: 2px;
+}
+
+.cordes i:nth-child(6) {
+  height: 2.5px;
+}
 
 .repere {
   position: absolute;
@@ -151,8 +190,14 @@ main, .pied {
   font-weight: 500;
 }
 
-.case:hover .nom { color: var(--texte); }
-.case.active .nom { color: var(--accent); font-weight: 600; }
+.case:hover .nom {
+  color: var(--texte);
+}
+
+.case.active .nom {
+  color: var(--accent);
+  font-weight: 600;
+}
 
 .case.active .repere {
   width: 25px;
@@ -165,9 +210,18 @@ main, .pied {
 }
 
 @keyframes vibre {
-  0%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-1.5px); }
-  75% { transform: translateY(1.5px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-1.5px);
+  }
+
+  75% {
+    transform: translateY(1.5px);
+  }
 }
 
 .case:hover .cordes i,
@@ -175,12 +229,16 @@ main, .pied {
   animation: vibre 0.08s linear 6;
 }
 
-.case:hover .cordes i:nth-child(n+4),
-.case.vibre .cordes i:nth-child(n+4) {
+.case:hover .cordes i:nth-child(n + 4),
+.case.vibre .cordes i:nth-child(n + 4) {
   animation-duration: 0.11s;
 }
 
 .son {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
   font: inherit;
   font-size: 0.85rem;
   color: var(--texte-doux);
@@ -192,57 +250,75 @@ main, .pied {
   white-space: nowrap;
 }
 
-.son[aria-pressed="false"] { opacity: 0.6; }
+.son[aria-pressed="false"] {
+  opacity: 0.6;
+}
 
-.perso { padding: 6rem 0 5rem; }
+.perso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
 
-h1, h2, h3 {
-  font-family: var(--titres);
-  font-weight: 400;
-  line-height: 1.1;
+.perso-texte p {
+  text-wrap: pretty;
+  padding: 0.3rem;
+}
+
+.photo {
+  display: flex;
+  width: 15rem;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px;
 }
 
 .perso h1 {
-  font-size: clamp(3rem, 10vw, 6.5rem);
+  font-size: 4rem;
   letter-spacing: -0.02em;
 }
 
 .intro {
   margin-top: 1.5rem;
   font-size: 1.2rem;
-
   color: var(--texte-doux);
 }
 
-/* =========================================================
-   7. STACK : cartes en bois avec médiators
-   ========================================================= */
 .stack-grille {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
 }
 
 .stack-carte {
+  position: relative;
+  height: 13rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 1.75rem 1rem 1.25rem;
+  padding: 1.75rem 0.5rem;
   border-radius: 10px;
   color: var(--nacre);
-   background:
-    linear-gradient(to bottom,
+  background:
+    linear-gradient(
+      to bottom,
       transparent calc(50% - 0.5px),
       rgba(212, 173, 105, 0.35) calc(50% - 0.5px) calc(50% + 0.5px),
-      transparent calc(50% + 0.5px))
-      0 0 / 100% calc(100% / 6) repeat-y,
+      transparent calc(50% + 0.5px)
+    )
+    0 0 / 100% calc(100% / 6) repeat-y,
     var(--palissandre);
   border-bottom: 4px solid var(--frette);
 }
 
 .stack-mediator {
+  flex-shrink: 0;
   width: 84px;
   height: 96px;
   display: grid;
@@ -259,19 +335,42 @@ h1, h2, h3 {
   height: 44px;
 }
 
-.stack-nom {
-  font-weight: 600;
-  font-size: 0.95rem;
+.stack-mediator svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: var(--palissandre);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
+.stack-mediator svg .plein {
+  fill: var(--palissandre);
+}
+
+.stack-nom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% * 10 / 12);
+  transform: translateY(-50%);
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  line-height: 1.3;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  text-wrap: balance;
+}
 
 .stack-carte:hover .stack-mediator {
   transform: rotate(-14deg) translateY(-4px);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .stack-mediator { transition: none; }
-}
 .section {
   padding: 4rem 0;
   border-top: 1px solid var(--ligne);
@@ -280,6 +379,21 @@ h1, h2, h3 {
 .section h2 {
   font-size: 2.2rem;
   margin-bottom: 2rem;
+}
+
+#stack h2 {
+  margin-bottom: 2.5rem;
+}
+
+.stack-sous-titre {
+  font-family: var(--titres);
+  font-size: 1.35rem;
+  color: var(--texte-doux);
+  margin-bottom: 2.5rem;
+}
+
+.stack-grille + .stack-sous-titre {
+  margin-top: 4rem;
 }
 
 .projet {
@@ -291,9 +405,21 @@ h1, h2, h3 {
   max-width: 70rem;
 }
 
-.projet:nth-of-type(even) img { order: 2; }
-.projet img { border-radius: 6px; }
-.projet h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.projet:nth-of-type(even) img {
+  order: 2;
+}
+
+.projet img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.projet h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
 
 .tags {
   margin-top: 0.75rem;
@@ -301,12 +427,82 @@ h1, h2, h3 {
   color: var(--texte-doux);
 }
 
-.lien { display: inline-block; margin-top: 1rem; font-weight: 600; }
+/* =========================================================
+   FORMULAIRE DE CONTACT
+   ========================================================= */
+.formulaire {
+  max-width: 34rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
-.texte-court { max-width: 36rem; }
-.texte-court p + p { margin-top: 1rem; }
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 
-.doux { color: var(--texte-doux); }
+.champ label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.champ input,
+.champ textarea {
+  font: inherit;
+  color: var(--texte);
+  background: transparent;
+  border: 1px solid var(--ligne);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.champ textarea {
+  resize: vertical;
+}
+
+.champ input:focus,
+.champ textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.formulaire .bouton {
+  align-self: flex-start;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.piege {
+  display: none;
+}
+
+.formulaire-statut {
+  color: var(--texte-doux);
+}
+
+.lien {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.texte-court {
+  max-width: 36rem;
+}
+
+.texte-court p + p {
+  margin-top: 1rem;
+}
+
+.doux {
+  color: var(--texte-doux);
+}
 
 .bouton {
   display: inline-block;
@@ -319,72 +515,127 @@ h1, h2, h3 {
   border-radius: 999px;
 }
 
-.bouton:hover { opacity: 0.88; }
-
-a, button {
-  cursor: var(--mediator), pointer;
+.bouton:hover {
+  opacity: 0.88;
 }
+
 
 .reseaux {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: center;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.reseau-mediator {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  background: var(--nacre);
+  border-radius: 50% 50% 50% 20%;
+  transform: rotate(-45deg);
+  box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.reseau-mediator img {
+  width: 24px;
+  height: 24px;
+  transform: rotate(45deg);   /* on redresse le logo */
+}
+
+.reseau-mediator:hover {
+  background: var(--accent);
+  transform: translateY(-4px) rotate(-59deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reseau-mediator { transition: none; }
 }
 
 .pied {
+  display: flex;
+  justify-content: center;
   padding-top: 2rem;
   padding-bottom: 3rem;
   font-size: 0.9rem;
   color: var(--texte-doux);
 }
 
+@media (max-width: 900px) {
+  .stack-grille {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .stack-grille {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 700px) {
-  .haut { flex-direction: column; gap: 0.4rem; padding: 0.6rem 0.75rem 0.4rem; }
-  .tete { width: 26px; height: 48px; }
-  .bois { height: 48px; }
-  .cordes { inset: 6px 0; }
-  .nom { font-size: 0.8rem; }
-  .son { font-size: 0.75rem; padding: 0.2rem 0.6rem; }
+  .haut {
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.6rem 0.75rem 0.4rem;
+  }
 
-  html { scroll-padding-top: 8rem; }
-  .perso { padding: 3rem 0; }
+  .tete {
+    position: static;
+    width: 26px;
+    height: 48px;
+  }
 
-  .projet { grid-template-columns: 1fr; }
-  .projet:nth-of-type(even) img { order: 0; }
+  .bois {
+    height: 48px;
+  }
+
+  .cordes {
+    inset: 6px 0;
+  }
+
+  .nom {
+    font-size: 0.8rem;
+  }
+
+  .son {
+    position: static;
+    transform: none;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  html {
+    scroll-padding-top: 8rem;
+  }
+
+  .perso {
+    padding: 3rem 0;
+  }
+
+  .projet {
+    grid-template-columns: 1fr;
+  }
+
+  .projet:nth-of-type(even) img {
+    order: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
+
   .case:hover .cordes i,
-  .case.vibre .cordes i { animation: none; }
-}
+  .case.vibre .cordes i {
+    animation: none;
+  }
 
-/* Sous-titres Hard Skills / Soft Skills */
-.stack-sous-titre {
-  font-family: var(--titres);
-  font-size: 1.35rem;
-  color: var(--texte-doux);
-  margin-bottom: 1.25rem;
-}
-
-/* Plus d'espace avant le deuxième sous-titre */
-.stack-grille + .stack-sous-titre {
-  margin-top: 3rem;
-}
-
-/* Les icônes dessinées des soft skills */
-.stack-mediator svg {
-  width: 38px;
-  height: 38px;
-
-  fill: none;
-  stroke: var(--palissandre);
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.stack-mediator svg .plein {
-  fill: var(--palissandre);
+  .stack-mediator {
+    transition: none;
+  }
 }
