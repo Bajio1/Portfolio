@@ -501,6 +501,7 @@ h3 {
 }
 
 .doux {
+  font-size: 0.8rem;
   color: var(--texte-doux);
 }
 
